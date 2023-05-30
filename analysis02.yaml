@@ -1,0 +1,74 @@
+---
+- dataframe: main
+  weight: the_weight
+  Histo1D:
+    - name: Electron_pt
+      title: Electron p_{T}[GeV]
+      bins: [ 40, 0., 200.]
+    - name: Electron_eta
+      title: "Electron #eta" 
+      bins: [ 15, -3., 3.]
+    - name: Electron_phi
+      title: "Electron #phi" 
+      bins: [ 15, -3.14156, 3.14156]
+    - name: Electron_dxy
+      title: "Electron #Delta_{xy} [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: Electron_dxy_loose
+      title: "Electron #Delta_{xy} [cm]" 
+      bins: [ 100, -10, 100]
+      var: Electron_dxy
+    - name: Electron_dz
+      title: "Electron #Delta_{z} [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: Electron_dz_loose
+      title: "Electron #Delta_{z} [cm]" 
+      bins: [ 100, -10, 100]
+      var: Electron_dz
+    - name: Muon_pt
+      title: Muon p_{T}[GeV]
+      bins: [ 40, 0., 200.]
+    - name: Muon_eta
+      title: "Muon #eta" 
+      bins: [ 15, -3., 3.]
+    - name: Muon_phi
+      title: "Muon #phi" 
+      bins: [ 15, -3.14156, 3.14156]
+    - name: Muon_dxy
+      title: "Muon #Delta_{xy} [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: Muon_dxy_loose
+      title: "Muon #Delta_{xy} [cm]" 
+      bins: [ 100, -10, 100]
+      var: Muon_dxy
+    - name: Muon_dz
+      title: "Muon #Delta_{z} [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: Muon_dz_loose
+      title: "Muon #Delta_{z} [cm]" 
+      bins: [ 100, -10, 100]
+      var: Muon_dz
+    - name: Lept_pt
+      title: Lepton p_{T}[GeV]
+      bins: [ 40, 0., 200.]
+    - name: Lept_eta
+      title: "Lepton #eta" 
+      bins: [ 15, -3., 3.]
+    - name: Lept_phi
+      title: "Lepton #phi" 
+      bins: [ 15, -3.14156, 3.14156]
+    - name: Lept_dxy
+      title: "Lepton #Delta_{xy} [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: Lept_dxy_loose
+      title: "Lepton #Delta_{xy} [cm]" 
+      bins: [ 100, -10, 100]
+      var: Lept_dxy
+    - name: Lept_dz
+      title: "Lepton #Delta_{z} [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: Lept_dz_loose
+      title: "Lepton #Delta_{z} [cm]" 
+      bins: [ 100, -10, 100]
+      var: Lept_dz
+

@@ -1,0 +1,28 @@
+---
+- dataframe: main
+  weight: the_weight
+  Histo1D:
+    - name: l1_pt
+      title: p_{T}(l_{1}) [GeV]
+      bins: [ 40, 0., 200.]
+    - name: l1_eta
+      title: "#eta (l_{1})" 
+      bins: [ 15, -3., 3.]
+    - name: l1_phi
+      title: "#phi (l_{1})" 
+      bins: [ 15, -3.14156, 3.14156]
+    - name: l1_dxy
+      title: "#Delta_{xy} (l_{1}) [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: l1_dxy_loose
+      title: "#Delta_{xy} (l_{1}) [cm]" 
+      bins: [ 100, -10, 100]
+      var: l1_dxy
+    - name: l1_dz
+      title: "#Delta_{z} (l_{1}) [cm]" 
+      bins: [ 20, -0.2, 0.2]
+    - name: l1_dz_loose
+      title: "#Delta_{z} (l_{1}) [cm]" 
+      bins: [ 100, -10, 100]
+      var: l1_dz
+

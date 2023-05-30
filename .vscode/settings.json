@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "none",
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "cSpell.customDictionaries": {
+        "custom-dictionary-workspace": {
+            "name": "custom-dictionary-workspace",
+            "path": "${workspaceFolder:StopsCompressed}/.cspell/custom-dictionary-workspace.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    }
+}
