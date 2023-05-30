@@ -1,8 +1,12 @@
 # Custom Dictionary Words
 ELEC
 HISTOS
+jsonpog
 lept
 liko
 LOWPT
 mrtools
 Ntuple
+Prefire
+reweight
+reweightw

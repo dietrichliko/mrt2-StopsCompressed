@@ -6,6 +6,7 @@ import click
 
 from mrtools import datasets
 from tools import leptons
+from tools import pog
 
 log = logging.getLogger("mrtools.user")
 
@@ -16,7 +17,6 @@ RDataFrame = Any
 CallableDefineDF = Callable[
     [RDataFrame, str, datasets.DatasetType, str], dict[str, RDataFrame]
 ]
-
 
 # Event Selection
 
@@ -40,24 +40,6 @@ WEIGHTS = [
 ]
 
 
-def def_event_selection(df: RDataFrame, selection: list[str]) -> RDataFrame:
-    log.debug('Filter("%s")', " && ".join(selection))
-    return df.Filter(" && ".join(selection))
-
-
-def def_weight(
-    df: RDataFrame, name: str, dataset_type: datasets.DatasetType
-) -> RDataFrame:
-    if dataset_type == datasets.DatasetType.DATA:
-        w = "1"
-    else:
-        w = "*".join(WEIGHTS)
-    log.debug('Define("%s","%s")', name, w)
-    df = df.Define(name, w)
-
-    return df
-
-
 class Analysis:
     loose: bool
 
@@ -74,8 +56,16 @@ class Analysis:
     ) -> dict[str, RDataFrame]:
         log.debug("Dataset %s", dataset_name)
 
-        df = def_event_selection(df, SELECTION)
-        df = def_weight(df, "the_weight", dataset_type)
+        log.debug('Filter("%s")', " && ".join(SELECTION))
+        df = df.Filter(" && ".join(SELECTION))
+
+        if dataset_type != datasets.DatasetType.DATA:
+            pog.def_pileup_weight(df, "new_reweightPU", period)
+            new_weight = "*".join(WEIGHTS)
+        else:
+            new_weight = "1"
+        log.debug('Define("new_weight", "%s")', new_weight)
+        df = df.Define("new_weight", new_weight)
 
         if self.loose:
             muon_select = leptons.MUON_SELECT_LOOSE_HYBRID_ISO
